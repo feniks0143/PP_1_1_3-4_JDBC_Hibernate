@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class Main {
     private final static UserService userService = new UserServiceImpl();
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args)  {
 
         //  Создание таблицы User(ов)
         // Добавление 4 User(ов) в таблицу с данными на свой выбор. После каждого добавления должен быть вывод в консоль ( User с именем – name добавлен в базу данных )
@@ -29,6 +29,7 @@ public class Main {
         userService.cleanUsersTable();
         userService.dropUsersTable();
 
+        Util.closeSessionFactory();
     }
 
 }
